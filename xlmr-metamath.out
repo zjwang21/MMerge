@@ -1,0 +1,847 @@
+[2024-11-09 09:45:55,646] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+/root/.local/lib/python3.9/site-packages/deepspeed/runtime/zero/linear.py:49: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+  def forward(ctx, input, weight, bias=None):
+/root/.local/lib/python3.9/site-packages/deepspeed/runtime/zero/linear.py:67: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+  def backward(ctx, grad_output):
+[93m [WARNING] [0m async_io requires the dev libaio .so object and headers but these were not found.
+[93m [WARNING] [0m async_io: please install the libaio-dev package with apt
+[93m [WARNING] [0m If libaio is already installed (perhaps from source), try setting the CFLAGS and LDFLAGS environment variables to where it can be found.
+[93m [WARNING] [0m Please specify the CUTLASS repo directory as environment variable $CUTLASS_PATH
+[93m [WARNING] [0m sparse_attn requires a torch version >= 1.5 and < 2.0 but detected 2.4
+[93m [WARNING] [0m using untested triton version (3.0.0), only 1.0.0 is known to be compatible
+[2024-11-09 09:45:57,105] [WARNING] [runner.py:202:fetch_hostfile] Unable to find hostfile, will proceed with training with local resources only.
+[2024-11-09 09:45:57,105] [INFO] [runner.py:568:main] cmd = /root/work/huangxin/envs/hs/bin/python -u -m deepspeed.launcher.launch --world_info=eyJsb2NhbGhvc3QiOiBbMCwgMSwgMiwgMywgNCwgNSwgNiwgN119 --master_addr=127.0.0.1 --master_port=9901 --enable_each_rank_log=None /root/work/huangxin/nanda/ImplicitTransBridge-master/train.py --deepspeed /root/work/huangxin/nanda/ImplicitTransBridge-master/ds_configs/ds_config.json --dataset_name /root/work/huangxin/nanda/QAlign-master/data/metamath/MetaMathQA-395K.json --preprocessing_num_workers 24 --llm_path /root/work/huangxin/nanda/models/Qwen/Qwen2.5-Math-7B-Instruct --slm_path_a /root/work/huangxin/nanda/models/Qwen/FacebookAI/xlm-roberta-base --slm_path_b /root/work/huangxin/nanda/models/Qwen/FacebookAI/xlm-roberta-base --stage 0 --output_dir /root/work/huangxin/nanda/ImplicitTransBridge-master/checkpoints/xlmr-qwe2.5-math7b-metamath --do_train --max_seq_length 1024 --per_device_train_batch_size 4 --gradient_accumulation_steps 4 --learning_rate 2e-4 --num_train_epochs 1 --save_only_model --logging_steps 10 --save_steps 2000 --seed 42 --overwrite_output_dir --bf16
+[2024-11-09 09:45:58,426] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[93m [WARNING] [0m async_io requires the dev libaio .so object and headers but these were not found.
+[93m [WARNING] [0m async_io: please install the libaio-dev package with apt
+[93m [WARNING] [0m If libaio is already installed (perhaps from source), try setting the CFLAGS and LDFLAGS environment variables to where it can be found.
+[93m [WARNING] [0m Please specify the CUTLASS repo directory as environment variable $CUTLASS_PATH
+[93m [WARNING] [0m sparse_attn requires a torch version >= 1.5 and < 2.0 but detected 2.4
+[93m [WARNING] [0m using untested triton version (3.0.0), only 1.0.0 is known to be compatible
+/root/.local/lib/python3.9/site-packages/deepspeed/runtime/zero/linear.py:49: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+  def forward(ctx, input, weight, bias=None):
+/root/.local/lib/python3.9/site-packages/deepspeed/runtime/zero/linear.py:67: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+  def backward(ctx, grad_output):
+[2024-11-09 09:45:59,812] [INFO] [launch.py:146:main] WORLD INFO DICT: {'localhost': [0, 1, 2, 3, 4, 5, 6, 7]}
+[2024-11-09 09:45:59,812] [INFO] [launch.py:152:main] nnodes=1, num_local_procs=8, node_rank=0
+[2024-11-09 09:45:59,812] [INFO] [launch.py:163:main] global_rank_mapping=defaultdict(<class 'list'>, {'localhost': [0, 1, 2, 3, 4, 5, 6, 7]})
+[2024-11-09 09:45:59,812] [INFO] [launch.py:164:main] dist_world_size=8
+[2024-11-09 09:45:59,812] [INFO] [launch.py:168:main] Setting CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
+[2024-11-09 09:45:59,824] [INFO] [launch.py:256:main] process 245 spawned with command: ['/root/work/huangxin/envs/hs/bin/python', '-u', '/root/work/huangxin/nanda/ImplicitTransBridge-master/train.py', '--local_rank=0', '--deepspeed', '/root/work/huangxin/nanda/ImplicitTransBridge-master/ds_configs/ds_config.json', '--dataset_name', '/root/work/huangxin/nanda/QAlign-master/data/metamath/MetaMathQA-395K.json', '--preprocessing_num_workers', '24', '--llm_path', '/root/work/huangxin/nanda/models/Qwen/Qwen2.5-Math-7B-Instruct', '--slm_path_a', '/root/work/huangxin/nanda/models/Qwen/FacebookAI/xlm-roberta-base', '--slm_path_b', '/root/work/huangxin/nanda/models/Qwen/FacebookAI/xlm-roberta-base', '--stage', '0', '--output_dir', '/root/work/huangxin/nanda/ImplicitTransBridge-master/checkpoints/xlmr-qwe2.5-math7b-metamath', '--do_train', '--max_seq_length', '1024', '--per_device_train_batch_size', '4', '--gradient_accumulation_steps', '4', '--learning_rate', '2e-4', '--num_train_epochs', '1', '--save_only_model', '--logging_steps', '10', '--save_steps', '2000', '--seed', '42', '--overwrite_output_dir', '--bf16']
+[2024-11-09 09:45:59,833] [INFO] [launch.py:256:main] process 246 spawned with command: ['/root/work/huangxin/envs/hs/bin/python', '-u', '/root/work/huangxin/nanda/ImplicitTransBridge-master/train.py', '--local_rank=1', '--deepspeed', '/root/work/huangxin/nanda/ImplicitTransBridge-master/ds_configs/ds_config.json', '--dataset_name', '/root/work/huangxin/nanda/QAlign-master/data/metamath/MetaMathQA-395K.json', '--preprocessing_num_workers', '24', '--llm_path', '/root/work/huangxin/nanda/models/Qwen/Qwen2.5-Math-7B-Instruct', '--slm_path_a', '/root/work/huangxin/nanda/models/Qwen/FacebookAI/xlm-roberta-base', '--slm_path_b', '/root/work/huangxin/nanda/models/Qwen/FacebookAI/xlm-roberta-base', '--stage', '0', '--output_dir', '/root/work/huangxin/nanda/ImplicitTransBridge-master/checkpoints/xlmr-qwe2.5-math7b-metamath', '--do_train', '--max_seq_length', '1024', '--per_device_train_batch_size', '4', '--gradient_accumulation_steps', '4', '--learning_rate', '2e-4', '--num_train_epochs', '1', '--save_only_model', '--logging_steps', '10', '--save_steps', '2000', '--seed', '42', '--overwrite_output_dir', '--bf16']
+[2024-11-09 09:45:59,844] [INFO] [launch.py:256:main] process 247 spawned with command: ['/root/work/huangxin/envs/hs/bin/python', '-u', '/root/work/huangxin/nanda/ImplicitTransBridge-master/train.py', '--local_rank=2', '--deepspeed', '/root/work/huangxin/nanda/ImplicitTransBridge-master/ds_configs/ds_config.json', '--dataset_name', '/root/work/huangxin/nanda/QAlign-master/data/metamath/MetaMathQA-395K.json', '--preprocessing_num_workers', '24', '--llm_path', '/root/work/huangxin/nanda/models/Qwen/Qwen2.5-Math-7B-Instruct', '--slm_path_a', '/root/work/huangxin/nanda/models/Qwen/FacebookAI/xlm-roberta-base', '--slm_path_b', '/root/work/huangxin/nanda/models/Qwen/FacebookAI/xlm-roberta-base', '--stage', '0', '--output_dir', '/root/work/huangxin/nanda/ImplicitTransBridge-master/checkpoints/xlmr-qwe2.5-math7b-metamath', '--do_train', '--max_seq_length', '1024', '--per_device_train_batch_size', '4', '--gradient_accumulation_steps', '4', '--learning_rate', '2e-4', '--num_train_epochs', '1', '--save_only_model', '--logging_steps', '10', '--save_steps', '2000', '--seed', '42', '--overwrite_output_dir', '--bf16']
+[2024-11-09 09:45:59,855] [INFO] [launch.py:256:main] process 248 spawned with command: ['/root/work/huangxin/envs/hs/bin/python', '-u', '/root/work/huangxin/nanda/ImplicitTransBridge-master/train.py', '--local_rank=3', '--deepspeed', '/root/work/huangxin/nanda/ImplicitTransBridge-master/ds_configs/ds_config.json', '--dataset_name', '/root/work/huangxin/nanda/QAlign-master/data/metamath/MetaMathQA-395K.json', '--preprocessing_num_workers', '24', '--llm_path', '/root/work/huangxin/nanda/models/Qwen/Qwen2.5-Math-7B-Instruct', '--slm_path_a', '/root/work/huangxin/nanda/models/Qwen/FacebookAI/xlm-roberta-base', '--slm_path_b', '/root/work/huangxin/nanda/models/Qwen/FacebookAI/xlm-roberta-base', '--stage', '0', '--output_dir', '/root/work/huangxin/nanda/ImplicitTransBridge-master/checkpoints/xlmr-qwe2.5-math7b-metamath', '--do_train', '--max_seq_length', '1024', '--per_device_train_batch_size', '4', '--gradient_accumulation_steps', '4', '--learning_rate', '2e-4', '--num_train_epochs', '1', '--save_only_model', '--logging_steps', '10', '--save_steps', '2000', '--seed', '42', '--overwrite_output_dir', '--bf16']
+[2024-11-09 09:45:59,864] [INFO] [launch.py:256:main] process 249 spawned with command: ['/root/work/huangxin/envs/hs/bin/python', '-u', '/root/work/huangxin/nanda/ImplicitTransBridge-master/train.py', '--local_rank=4', '--deepspeed', '/root/work/huangxin/nanda/ImplicitTransBridge-master/ds_configs/ds_config.json', '--dataset_name', '/root/work/huangxin/nanda/QAlign-master/data/metamath/MetaMathQA-395K.json', '--preprocessing_num_workers', '24', '--llm_path', '/root/work/huangxin/nanda/models/Qwen/Qwen2.5-Math-7B-Instruct', '--slm_path_a', '/root/work/huangxin/nanda/models/Qwen/FacebookAI/xlm-roberta-base', '--slm_path_b', '/root/work/huangxin/nanda/models/Qwen/FacebookAI/xlm-roberta-base', '--stage', '0', '--output_dir', '/root/work/huangxin/nanda/ImplicitTransBridge-master/checkpoints/xlmr-qwe2.5-math7b-metamath', '--do_train', '--max_seq_length', '1024', '--per_device_train_batch_size', '4', '--gradient_accumulation_steps', '4', '--learning_rate', '2e-4', '--num_train_epochs', '1', '--save_only_model', '--logging_steps', '10', '--save_steps', '2000', '--seed', '42', '--overwrite_output_dir', '--bf16']
+[2024-11-09 09:45:59,875] [INFO] [launch.py:256:main] process 250 spawned with command: ['/root/work/huangxin/envs/hs/bin/python', '-u', '/root/work/huangxin/nanda/ImplicitTransBridge-master/train.py', '--local_rank=5', '--deepspeed', '/root/work/huangxin/nanda/ImplicitTransBridge-master/ds_configs/ds_config.json', '--dataset_name', '/root/work/huangxin/nanda/QAlign-master/data/metamath/MetaMathQA-395K.json', '--preprocessing_num_workers', '24', '--llm_path', '/root/work/huangxin/nanda/models/Qwen/Qwen2.5-Math-7B-Instruct', '--slm_path_a', '/root/work/huangxin/nanda/models/Qwen/FacebookAI/xlm-roberta-base', '--slm_path_b', '/root/work/huangxin/nanda/models/Qwen/FacebookAI/xlm-roberta-base', '--stage', '0', '--output_dir', '/root/work/huangxin/nanda/ImplicitTransBridge-master/checkpoints/xlmr-qwe2.5-math7b-metamath', '--do_train', '--max_seq_length', '1024', '--per_device_train_batch_size', '4', '--gradient_accumulation_steps', '4', '--learning_rate', '2e-4', '--num_train_epochs', '1', '--save_only_model', '--logging_steps', '10', '--save_steps', '2000', '--seed', '42', '--overwrite_output_dir', '--bf16']
+[2024-11-09 09:45:59,884] [INFO] [launch.py:256:main] process 251 spawned with command: ['/root/work/huangxin/envs/hs/bin/python', '-u', '/root/work/huangxin/nanda/ImplicitTransBridge-master/train.py', '--local_rank=6', '--deepspeed', '/root/work/huangxin/nanda/ImplicitTransBridge-master/ds_configs/ds_config.json', '--dataset_name', '/root/work/huangxin/nanda/QAlign-master/data/metamath/MetaMathQA-395K.json', '--preprocessing_num_workers', '24', '--llm_path', '/root/work/huangxin/nanda/models/Qwen/Qwen2.5-Math-7B-Instruct', '--slm_path_a', '/root/work/huangxin/nanda/models/Qwen/FacebookAI/xlm-roberta-base', '--slm_path_b', '/root/work/huangxin/nanda/models/Qwen/FacebookAI/xlm-roberta-base', '--stage', '0', '--output_dir', '/root/work/huangxin/nanda/ImplicitTransBridge-master/checkpoints/xlmr-qwe2.5-math7b-metamath', '--do_train', '--max_seq_length', '1024', '--per_device_train_batch_size', '4', '--gradient_accumulation_steps', '4', '--learning_rate', '2e-4', '--num_train_epochs', '1', '--save_only_model', '--logging_steps', '10', '--save_steps', '2000', '--seed', '42', '--overwrite_output_dir', '--bf16']
+[2024-11-09 09:45:59,893] [INFO] [launch.py:256:main] process 252 spawned with command: ['/root/work/huangxin/envs/hs/bin/python', '-u', '/root/work/huangxin/nanda/ImplicitTransBridge-master/train.py', '--local_rank=7', '--deepspeed', '/root/work/huangxin/nanda/ImplicitTransBridge-master/ds_configs/ds_config.json', '--dataset_name', '/root/work/huangxin/nanda/QAlign-master/data/metamath/MetaMathQA-395K.json', '--preprocessing_num_workers', '24', '--llm_path', '/root/work/huangxin/nanda/models/Qwen/Qwen2.5-Math-7B-Instruct', '--slm_path_a', '/root/work/huangxin/nanda/models/Qwen/FacebookAI/xlm-roberta-base', '--slm_path_b', '/root/work/huangxin/nanda/models/Qwen/FacebookAI/xlm-roberta-base', '--stage', '0', '--output_dir', '/root/work/huangxin/nanda/ImplicitTransBridge-master/checkpoints/xlmr-qwe2.5-math7b-metamath', '--do_train', '--max_seq_length', '1024', '--per_device_train_batch_size', '4', '--gradient_accumulation_steps', '4', '--learning_rate', '2e-4', '--num_train_epochs', '1', '--save_only_model', '--logging_steps', '10', '--save_steps', '2000', '--seed', '42', '--overwrite_output_dir', '--bf16']
+[2024-11-09 09:46:03,625] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-11-09 09:46:03,635] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-11-09 09:46:03,644] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-11-09 09:46:03,646] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-11-09 09:46:03,682] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-11-09 09:46:03,685] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-11-09 09:46:03,703] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-11-09 09:46:03,705] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[93m [WARNING] [0m async_io requires the dev libaio .so object and headers but these were not found.
+[93m [WARNING] [0m async_io requires the dev libaio .so object and headers but these were not found.
+[93m [WARNING] [0m async_io: please install the libaio-dev package with apt
+[93m [WARNING] [0m If libaio is already installed (perhaps from source), try setting the CFLAGS and LDFLAGS environment variables to where it can be found.
+[93m [WARNING] [0m Please specify the CUTLASS repo directory as environment variable $CUTLASS_PATH
+[93m [WARNING] [0m async_io requires the dev libaio .so object and headers but these were not found.
+[93m [WARNING] [0m async_io requires the dev libaio .so object and headers but these were not found.
+[93m [WARNING] [0m async_io: please install the libaio-dev package with apt
+[93m [WARNING] [0m If libaio is already installed (perhaps from source), try setting the CFLAGS and LDFLAGS environment variables to where it can be found.
+[93m [WARNING] [0m Please specify the CUTLASS repo directory as environment variable $CUTLASS_PATH
+[93m [WARNING] [0m async_io: please install the libaio-dev package with apt
+[93m [WARNING] [0m If libaio is already installed (perhaps from source), try setting the CFLAGS and LDFLAGS environment variables to where it can be found.
+[93m [WARNING] [0m Please specify the CUTLASS repo directory as environment variable $CUTLASS_PATH
+[93m [WARNING] [0m async_io: please install the libaio-dev package with apt
+[93m [WARNING] [0m If libaio is already installed (perhaps from source), try setting the CFLAGS and LDFLAGS environment variables to where it can be found.
+[93m [WARNING] [0m Please specify the CUTLASS repo directory as environment variable $CUTLASS_PATH
+[93m [WARNING] [0m async_io requires the dev libaio .so object and headers but these were not found.
+[93m [WARNING] [0m async_io requires the dev libaio .so object and headers but these were not found.
+[93m [WARNING] [0m async_io: please install the libaio-dev package with apt
+[93m [WARNING] [0m If libaio is already installed (perhaps from source), try setting the CFLAGS and LDFLAGS environment variables to where it can be found.
+[93m [WARNING] [0m Please specify the CUTLASS repo directory as environment variable $CUTLASS_PATH
+[93m [WARNING] [0m async_io requires the dev libaio .so object and headers but these were not found.
+[93m [WARNING] [0m async_io requires the dev libaio .so object and headers but these were not found.
+[93m [WARNING] [0m sparse_attn requires a torch version >= 1.5 and < 2.0 but detected 2.4
+[93m [WARNING] [0m using untested triton version (3.0.0), only 1.0.0 is known to be compatible
+[93m [WARNING] [0m async_io: please install the libaio-dev package with apt
+[93m [WARNING] [0m If libaio is already installed (perhaps from source), try setting the CFLAGS and LDFLAGS environment variables to where it can be found.
+[93m [WARNING] [0m Please specify the CUTLASS repo directory as environment variable $CUTLASS_PATH
+[93m [WARNING] [0m async_io: please install the libaio-dev package with apt
+[93m [WARNING] [0m If libaio is already installed (perhaps from source), try setting the CFLAGS and LDFLAGS environment variables to where it can be found.
+[93m [WARNING] [0m Please specify the CUTLASS repo directory as environment variable $CUTLASS_PATH
+[93m [WARNING] [0m async_io: please install the libaio-dev package with apt
+[93m [WARNING] [0m If libaio is already installed (perhaps from source), try setting the CFLAGS and LDFLAGS environment variables to where it can be found.
+[93m [WARNING] [0m Please specify the CUTLASS repo directory as environment variable $CUTLASS_PATH
+[93m [WARNING] [0m sparse_attn requires a torch version >= 1.5 and < 2.0 but detected 2.4
+[93m [WARNING] [0m using untested triton version (3.0.0), only 1.0.0 is known to be compatible
+[93m [WARNING] [0m sparse_attn requires a torch version >= 1.5 and < 2.0 but detected 2.4
+[93m [WARNING] [0m using untested triton version (3.0.0), only 1.0.0 is known to be compatible
+[93m [WARNING] [0m sparse_attn requires a torch version >= 1.5 and < 2.0 but detected 2.4
+[93m [WARNING] [0m using untested triton version (3.0.0), only 1.0.0 is known to be compatible
+/root/.local/lib/python3.9/site-packages/deepspeed/runtime/zero/linear.py:49: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+  def forward(ctx, input, weight, bias=None):
+/root/.local/lib/python3.9/site-packages/deepspeed/runtime/zero/linear.py:67: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+  def backward(ctx, grad_output):
+/root/.local/lib/python3.9/site-packages/deepspeed/runtime/zero/linear.py:49: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+  def forward(ctx, input, weight, bias=None):
+/root/.local/lib/python3.9/site-packages/deepspeed/runtime/zero/linear.py:67: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+  def backward(ctx, grad_output):
+/root/.local/lib/python3.9/site-packages/deepspeed/runtime/zero/linear.py:49: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+  def forward(ctx, input, weight, bias=None):
+/root/.local/lib/python3.9/site-packages/deepspeed/runtime/zero/linear.py:67: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+  def backward(ctx, grad_output):
+[93m [WARNING] [0m sparse_attn requires a torch version >= 1.5 and < 2.0 but detected 2.4
+[93m [WARNING] [0m using untested triton version (3.0.0), only 1.0.0 is known to be compatible
+[93m [WARNING] [0m sparse_attn requires a torch version >= 1.5 and < 2.0 but detected 2.4
+[93m [WARNING] [0m using untested triton version (3.0.0), only 1.0.0 is known to be compatible
+[93m [WARNING] [0m sparse_attn requires a torch version >= 1.5 and < 2.0 but detected 2.4
+[93m [WARNING] [0m using untested triton version (3.0.0), only 1.0.0 is known to be compatible
+[93m [WARNING] [0m sparse_attn requires a torch version >= 1.5 and < 2.0 but detected 2.4
+[93m [WARNING] [0m using untested triton version (3.0.0), only 1.0.0 is known to be compatible
+/root/.local/lib/python3.9/site-packages/deepspeed/runtime/zero/linear.py:49: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+  def forward(ctx, input, weight, bias=None):
+/root/.local/lib/python3.9/site-packages/deepspeed/runtime/zero/linear.py:67: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+  def backward(ctx, grad_output):
+/root/.local/lib/python3.9/site-packages/deepspeed/runtime/zero/linear.py:49: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+  def forward(ctx, input, weight, bias=None):
+/root/.local/lib/python3.9/site-packages/deepspeed/runtime/zero/linear.py:67: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+  def backward(ctx, grad_output):
+/root/.local/lib/python3.9/site-packages/deepspeed/runtime/zero/linear.py:49: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+  def forward(ctx, input, weight, bias=None):
+/root/.local/lib/python3.9/site-packages/deepspeed/runtime/zero/linear.py:67: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+  def backward(ctx, grad_output):
+/root/.local/lib/python3.9/site-packages/deepspeed/runtime/zero/linear.py:49: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+  def forward(ctx, input, weight, bias=None):
+/root/.local/lib/python3.9/site-packages/deepspeed/runtime/zero/linear.py:67: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+  def backward(ctx, grad_output):
+/root/.local/lib/python3.9/site-packages/deepspeed/runtime/zero/linear.py:49: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+  def forward(ctx, input, weight, bias=None):
+/root/.local/lib/python3.9/site-packages/deepspeed/runtime/zero/linear.py:67: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+  def backward(ctx, grad_output):
+[2024-11-09 09:46:04,281] [INFO] [comm.py:637:init_distributed] cdb=None
+[2024-11-09 09:46:04,281] [INFO] [comm.py:637:init_distributed] cdb=None
+[2024-11-09 09:46:04,281] [INFO] [comm.py:668:init_distributed] Initializing TorchBackend in DeepSpeed with backend nccl
+[2024-11-09 09:46:04,284] [INFO] [comm.py:637:init_distributed] cdb=None
+[2024-11-09 09:46:04,328] [INFO] [comm.py:637:init_distributed] cdb=None
+[2024-11-09 09:46:04,338] [INFO] [comm.py:637:init_distributed] cdb=None
+[2024-11-09 09:46:04,349] [INFO] [comm.py:637:init_distributed] cdb=None
+[2024-11-09 09:46:04,385] [INFO] [comm.py:637:init_distributed] cdb=None
+[2024-11-09 09:46:04,407] [INFO] [comm.py:637:init_distributed] cdb=None
+11/09/2024 09:46:04 - WARNING - __main__ - Process rank: 3, device: cuda:3, n_gpu: 1, distributed training: True, 16-bits training: False
+11/09/2024 09:46:04 - WARNING - __main__ - Process rank: 5, device: cuda:5, n_gpu: 1, distributed training: True, 16-bits training: False
+11/09/2024 09:46:04 - WARNING - __main__ - Process rank: 6, device: cuda:6, n_gpu: 1, distributed training: True, 16-bits training: False
+11/09/2024 09:46:04 - WARNING - __main__ - Process rank: 4, device: cuda:4, n_gpu: 1, distributed training: True, 16-bits training: False
+11/09/2024 09:46:04 - WARNING - __main__ - Process rank: 7, device: cuda:7, n_gpu: 1, distributed training: True, 16-bits training: False
+11/09/2024 09:46:05 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 1, distributed training: True, 16-bits training: False
+11/09/2024 09:46:05 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+_n_gpu=1,
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+batch_eval_metrics=False,
+bf16=True,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=/root/work/huangxin/nanda/ImplicitTransBridge-master/ds_configs/ds_config.json,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=False,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=None,
+eval_strategy=no,
+eval_use_gather_object=False,
+evaluation_strategy=None,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+gradient_accumulation_steps=4,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_num_input_tokens_seen=False,
+include_tokens_per_second=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=0.0002,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=/root/work/huangxin/nanda/ImplicitTransBridge-master/checkpoints/xlmr-qwe2.5-math7b-metamath/runs/Nov09_09-46-03_dt-ceef18654ed545c5b220e31e5a0b6fc8-master-425d6772ee85-0,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=10,
+logging_strategy=steps,
+lr_scheduler_kwargs={},
+lr_scheduler_type=linear,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+neftune_noise_alpha=None,
+no_cuda=False,
+num_train_epochs=1.0,
+optim=adamw_torch,
+optim_args=None,
+optim_target_modules=None,
+output_dir=/root/work/huangxin/nanda/ImplicitTransBridge-master/checkpoints/xlmr-qwe2.5-math7b-metamath,
+overwrite_output_dir=True,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=4,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=False,
+report_to=[],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=/root/work/huangxin/nanda/ImplicitTransBridge-master/checkpoints/xlmr-qwe2.5-math7b-metamath,
+save_on_each_node=False,
+save_only_model=True,
+save_safetensors=True,
+save_steps=2000,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+split_batches=None,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torch_empty_cache_steps=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_cpu=False,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.0,
+warmup_steps=0,
+weight_decay=0.0,
+)
+[INFO|tokenization_utils_base.py:2267] 2024-11-09 09:46:05,456 >> loading file vocab.json
+[INFO|tokenization_utils_base.py:2267] 2024-11-09 09:46:05,456 >> loading file merges.txt
+[INFO|tokenization_utils_base.py:2267] 2024-11-09 09:46:05,456 >> loading file tokenizer.json
+[INFO|tokenization_utils_base.py:2267] 2024-11-09 09:46:05,456 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:2267] 2024-11-09 09:46:05,456 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:2267] 2024-11-09 09:46:05,456 >> loading file tokenizer_config.json
+11/09/2024 09:46:05 - WARNING - __main__ - Process rank: 2, device: cuda:2, n_gpu: 1, distributed training: True, 16-bits training: False
+11/09/2024 09:46:05 - WARNING - __main__ - Process rank: 1, device: cuda:1, n_gpu: 1, distributed training: True, 16-bits training: False
+[INFO|tokenization_utils_base.py:2513] 2024-11-09 09:46:05,640 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[INFO|configuration_utils.py:731] 2024-11-09 09:46:05,641 >> loading configuration file /root/work/huangxin/nanda/models/Qwen/FacebookAI/xlm-roberta-base/config.json
+[INFO|configuration_utils.py:800] 2024-11-09 09:46:05,643 >> Model config XLMRobertaConfig {
+  "_name_or_path": "/root/work/huangxin/nanda/models/Qwen/FacebookAI/xlm-roberta-base",
+  "architectures": [
+    "XLMRobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "xlm-roberta",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "output_past": true,
+  "pad_token_id": 1,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.44.2",
+  "type_vocab_size": 1,
+  "use_cache": true,
+  "vocab_size": 250002
+}
+
+[INFO|tokenization_utils_base.py:2267] 2024-11-09 09:46:05,644 >> loading file sentencepiece.bpe.model
+[INFO|tokenization_utils_base.py:2267] 2024-11-09 09:46:05,644 >> loading file tokenizer.json
+[INFO|tokenization_utils_base.py:2267] 2024-11-09 09:46:05,644 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:2267] 2024-11-09 09:46:05,644 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:2267] 2024-11-09 09:46:05,644 >> loading file tokenizer_config.json
+[INFO|configuration_utils.py:731] 2024-11-09 09:46:05,645 >> loading configuration file /root/work/huangxin/nanda/models/Qwen/FacebookAI/xlm-roberta-base/config.json
+[INFO|configuration_utils.py:800] 2024-11-09 09:46:05,645 >> Model config XLMRobertaConfig {
+  "_name_or_path": "/root/work/huangxin/nanda/models/Qwen/FacebookAI/xlm-roberta-base",
+  "architectures": [
+    "XLMRobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "xlm-roberta",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "output_past": true,
+  "pad_token_id": 1,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.44.2",
+  "type_vocab_size": 1,
+  "use_cache": true,
+  "vocab_size": 250002
+}
+
+/root/.local/lib/python3.9/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+/root/.local/lib/python3.9/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+/root/.local/lib/python3.9/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+/root/.local/lib/python3.9/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]/root/.local/lib/python3.9/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]/root/.local/lib/python3.9/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+[INFO|configuration_utils.py:731] 2024-11-09 09:46:06,945 >> loading configuration file /root/work/huangxin/nanda/models/Qwen/Qwen2.5-Math-7B-Instruct/config.json
+[INFO|configuration_utils.py:800] 2024-11-09 09:46:06,946 >> Model config Qwen2Config {
+  "_name_or_path": "/root/work/huangxin/nanda/models/Qwen/Qwen2.5-Math-7B-Instruct",
+  "architectures": [
+    "Qwen2ForCausalLM"
+  ],
+  "attention_dropout": 0.0,
+  "bos_token_id": 151643,
+  "eos_token_id": 151645,
+  "hidden_act": "silu",
+  "hidden_size": 3584,
+  "initializer_range": 0.02,
+  "intermediate_size": 18944,
+  "max_position_embeddings": 4096,
+  "max_window_layers": 28,
+  "model_type": "qwen2",
+  "num_attention_heads": 28,
+  "num_hidden_layers": 28,
+  "num_key_value_heads": 4,
+  "rms_norm_eps": 1e-06,
+  "rope_theta": 10000.0,
+  "sliding_window": null,
+  "tie_word_embeddings": false,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.44.2",
+  "use_cache": true,
+  "use_sliding_window": false,
+  "vocab_size": 152064
+}
+
+[INFO|modeling_utils.py:3675] 2024-11-09 09:46:06,950 >> loading weights file /root/work/huangxin/nanda/models/Qwen/Qwen2.5-Math-7B-Instruct/model.safetensors.index.json
+[INFO|configuration_utils.py:1038] 2024-11-09 09:46:06,956 >> Generate config GenerationConfig {
+  "bos_token_id": 151643,
+  "eos_token_id": 151645
+}
+
+/root/.local/lib/python3.9/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+/root/.local/lib/python3.9/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:05,  1.93s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:02<00:06,  2.01s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:02<00:08,  2.68s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:04<00:04,  2.47s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:05<00:05,  2.63s/it]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:05<00:06,  3.05s/it]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:02<00:08,  2.77s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:08<00:02,  2.85s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:08<00:02,  2.95s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:03<00:09,  3.12s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:02<00:07,  2.57s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:02<00:08,  2.85s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:09<00:03,  3.14s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:10<00:00,  2.57s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:10<00:00,  2.56s/it]
+Loading checkpoint shards:  25%|██▌       | 1/4 [00:03<00:09,  3.09s/it]11/09/2024 09:46:16 - INFO - src.model_utils.modeling_itb - Small LM A model size: 278.043648 M
+11/09/2024 09:46:16 - INFO - src.model_utils.modeling_itb - Small LM A model size: 278.043648 M
+11/09/2024 09:46:16 - INFO - src.model_utils.modeling_itb - mapping a layer size: 6.693376 M
+11/09/2024 09:46:16 - INFO - src.model_utils.modeling_itb - mapping a layer size: 6.693376 M
+Loading checkpoint shards: 100%|██████████| 4/4 [00:10<00:00,  2.65s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:10<00:00,  2.65s/it]
+Generating train split: 0 examples [00:00, ? examples/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:05<00:05,  2.69s/it]11/09/2024 09:46:16 - INFO - src.model_utils.modeling_itb - Small LM A model size: 278.043648 M
+11/09/2024 09:46:16 - INFO - src.model_utils.modeling_itb - Small LM A model size: 278.043648 M
+11/09/2024 09:46:16 - INFO - src.model_utils.modeling_itb - mapping a layer size: 6.693376 M
+11/09/2024 09:46:16 - INFO - src.model_utils.modeling_itb - mapping a layer size: 6.693376 M
+Loading checkpoint shards:  50%|█████     | 2/4 [00:05<00:05,  2.77s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:04<00:04,  2.27s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:11<00:00,  2.66s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:11<00:00,  2.79s/it]
+11/09/2024 09:46:18 - INFO - src.model_utils.modeling_itb - Small LM A model size: 278.043648 M
+11/09/2024 09:46:18 - INFO - src.model_utils.modeling_itb - Small LM A model size: 278.043648 M
+11/09/2024 09:46:18 - INFO - src.model_utils.modeling_itb - mapping a layer size: 6.693376 M
+11/09/2024 09:46:18 - INFO - src.model_utils.modeling_itb - mapping a layer size: 6.693376 M
+Loading checkpoint shards:  50%|█████     | 2/4 [00:05<00:05,  2.61s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:05<00:05,  2.64s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:07<00:02,  2.40s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:07<00:02,  2.39s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:06<00:01,  1.93s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:06<00:02,  2.05s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:09<00:00,  2.08s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:09<00:00,  2.26s/it]
+11/09/2024 09:46:20 - INFO - src.model_utils.modeling_itb - Small LM A model size: 278.043648 M
+11/09/2024 09:46:20 - INFO - src.model_utils.modeling_itb - Small LM A model size: 278.043648 M
+11/09/2024 09:46:20 - INFO - src.model_utils.modeling_itb - mapping a layer size: 6.693376 M
+11/09/2024 09:46:20 - INFO - src.model_utils.modeling_itb - mapping a layer size: 6.693376 M
+Loading checkpoint shards:  75%|███████▌  | 3/4 [00:07<00:02,  2.32s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:08<00:00,  1.96s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:08<00:00,  2.22s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:07<00:00,  1.66s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:07<00:00,  1.85s/it]
+11/09/2024 09:46:20 - INFO - src.model_utils.modeling_itb - Small LM A model size: 278.043648 M
+11/09/2024 09:46:20 - INFO - src.model_utils.modeling_itb - Small LM A model size: 278.043648 M
+11/09/2024 09:46:20 - INFO - src.model_utils.modeling_itb - Small LM A model size: 278.043648 M
+11/09/2024 09:46:20 - INFO - src.model_utils.modeling_itb - Small LM A model size: 278.043648 M
+11/09/2024 09:46:20 - INFO - src.model_utils.modeling_itb - mapping a layer size: 6.693376 M
+11/09/2024 09:46:20 - INFO - src.model_utils.modeling_itb - mapping a layer size: 6.693376 M
+11/09/2024 09:46:20 - INFO - src.model_utils.modeling_itb - mapping a layer size: 6.693376 M
+11/09/2024 09:46:20 - INFO - src.model_utils.modeling_itb - mapping a layer size: 6.693376 M
+Loading checkpoint shards: 100%|██████████| 4/4 [00:07<00:00,  1.66s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:07<00:00,  1.93s/it]
+[INFO|modeling_utils.py:4507] 2024-11-09 09:46:20,803 >> All model checkpoint weights were used when initializing Qwen2ForCausalLM.
+
+[INFO|modeling_utils.py:4515] 2024-11-09 09:46:20,803 >> All the weights of Qwen2ForCausalLM were initialized from the model checkpoint at /root/work/huangxin/nanda/models/Qwen/Qwen2.5-Math-7B-Instruct.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use Qwen2ForCausalLM for predictions without further training.
+[INFO|configuration_utils.py:991] 2024-11-09 09:46:20,806 >> loading configuration file /root/work/huangxin/nanda/models/Qwen/Qwen2.5-Math-7B-Instruct/generation_config.json
+[INFO|configuration_utils.py:1038] 2024-11-09 09:46:20,806 >> Generate config GenerationConfig {
+  "bos_token_id": 151643,
+  "eos_token_id": [
+    151645,
+    151643
+  ],
+  "pad_token_id": 151643
+}
+
+[INFO|configuration_utils.py:731] 2024-11-09 09:46:20,808 >> loading configuration file /root/work/huangxin/nanda/models/Qwen/FacebookAI/xlm-roberta-base/config.json
+[INFO|configuration_utils.py:800] 2024-11-09 09:46:20,809 >> Model config XLMRobertaConfig {
+  "_name_or_path": "/root/work/huangxin/nanda/models/Qwen/FacebookAI/xlm-roberta-base",
+  "architectures": [
+    "XLMRobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "xlm-roberta",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "output_past": true,
+  "pad_token_id": 1,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.44.2",
+  "type_vocab_size": 1,
+  "use_cache": true,
+  "vocab_size": 250002
+}
+
+[INFO|modeling_utils.py:3675] 2024-11-09 09:46:20,849 >> loading weights file /root/work/huangxin/nanda/models/Qwen/FacebookAI/xlm-roberta-base/model.safetensors
+[INFO|modeling_utils.py:4497] 2024-11-09 09:46:20,885 >> Some weights of the model checkpoint at /root/work/huangxin/nanda/models/Qwen/FacebookAI/xlm-roberta-base were not used when initializing XLMRobertaModel: ['lm_head.bias', 'lm_head.dense.bias', 'lm_head.dense.weight', 'lm_head.layer_norm.bias', 'lm_head.layer_norm.weight']
+- This IS expected if you are initializing XLMRobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing XLMRobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+[INFO|modeling_utils.py:4515] 2024-11-09 09:46:20,885 >> All the weights of XLMRobertaModel were initialized from the model checkpoint at /root/work/huangxin/nanda/models/Qwen/FacebookAI/xlm-roberta-base.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use XLMRobertaModel for predictions without further training.
+11/09/2024 09:46:20 - INFO - src.model_utils.modeling_itb - Small LM A model size: 278.043648 M
+11/09/2024 09:46:20 - INFO - src.model_utils.modeling_itb - Small LM A model size: 278.043648 M
+11/09/2024 09:46:20 - INFO - src.model_utils.modeling_itb - mapping a layer size: 6.693376 M
+11/09/2024 09:46:20 - INFO - src.model_utils.modeling_itb - mapping a layer size: 6.693376 M
+Using custom data configuration default-5110b371feb00e53
+11/09/2024 09:46:20 - INFO - datasets.builder - Using custom data configuration default-5110b371feb00e53
+Loading Dataset Infos from /root/.local/lib/python3.9/site-packages/datasets/packaged_modules/json
+11/09/2024 09:46:20 - INFO - datasets.info - Loading Dataset Infos from /root/.local/lib/python3.9/site-packages/datasets/packaged_modules/json
+Loading checkpoint shards: 100%|██████████| 4/4 [00:07<00:00,  1.60s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:07<00:00,  1.96s/it]
+11/09/2024 09:46:21 - INFO - src.model_utils.modeling_itb - Small LM A model size: 278.043648 M
+11/09/2024 09:46:21 - INFO - src.model_utils.modeling_itb - Small LM A model size: 278.043648 M
+11/09/2024 09:46:21 - INFO - src.model_utils.modeling_itb - mapping a layer size: 6.693376 M
+11/09/2024 09:46:21 - INFO - src.model_utils.modeling_itb - mapping a layer size: 6.693376 M
+Generating train split: 395000 examples [00:11, 34222.70 examples/s]Generating train split: 395000 examples [00:11, 34166.37 examples/s]
+Found cached dataset json (/root/.cache/huggingface/datasets/json/default-5110b371feb00e53/0.0.0/f4e89e8750d5d5ffbef2c078bf0ddfedef29dc2faff52a6255cf513c05eb1092)
+11/09/2024 09:46:28 - INFO - datasets.builder - Found cached dataset json (/root/.cache/huggingface/datasets/json/default-5110b371feb00e53/0.0.0/f4e89e8750d5d5ffbef2c078bf0ddfedef29dc2faff52a6255cf513c05eb1092)
+Loading Dataset info from /root/.cache/huggingface/datasets/json/default-5110b371feb00e53/0.0.0/f4e89e8750d5d5ffbef2c078bf0ddfedef29dc2faff52a6255cf513c05eb1092
+11/09/2024 09:46:28 - INFO - datasets.info - Loading Dataset info from /root/.cache/huggingface/datasets/json/default-5110b371feb00e53/0.0.0/f4e89e8750d5d5ffbef2c078bf0ddfedef29dc2faff52a6255cf513c05eb1092
+Map:   0%|          | 0/395000 [00:00<?, ? examples/s]Caching processed dataset at /root/.cache/huggingface/datasets/json/default-5110b371feb00e53/0.0.0/f4e89e8750d5d5ffbef2c078bf0ddfedef29dc2faff52a6255cf513c05eb1092/cache-f0bebeeb699cb5f8.arrow
+11/09/2024 09:46:28 - INFO - datasets.arrow_dataset - Caching processed dataset at /root/.cache/huggingface/datasets/json/default-5110b371feb00e53/0.0.0/f4e89e8750d5d5ffbef2c078bf0ddfedef29dc2faff52a6255cf513c05eb1092/cache-f0bebeeb699cb5f8.arrow
+Map:   0%|          | 1000/395000 [00:00<00:54, 7208.63 examples/s]Map:   1%|          | 2000/395000 [00:00<00:46, 8456.67 examples/s]Map:   1%|          | 3000/395000 [00:00<00:43, 9003.45 examples/s]Map:   1%|▏         | 5000/395000 [00:00<00:40, 9608.30 examples/s]Map:   2%|▏         | 7000/395000 [00:00<00:39, 9831.26 examples/s]Map:   2%|▏         | 9000/395000 [00:00<00:38, 10021.56 examples/s]Map:   3%|▎         | 11000/395000 [00:01<00:38, 10079.40 examples/s]Map:   3%|▎         | 13000/395000 [00:01<00:37, 10166.44 examples/s]Map:   4%|▍         | 15000/395000 [00:01<00:37, 10235.74 examples/s]Map:   4%|▍         | 17000/395000 [00:01<00:37, 10213.32 examples/s]Map:   5%|▍         | 19000/395000 [00:01<00:36, 10312.50 examples/s]Map:   5%|▌         | 21000/395000 [00:02<00:35, 10424.54 examples/s]Map:   6%|▌         | 23000/395000 [00:02<00:35, 10524.80 examples/s]Map:   6%|▋         | 25000/395000 [00:02<00:34, 10600.17 examples/s]Map:   7%|▋         | 27000/395000 [00:02<00:34, 10650.91 examples/s]Map:   7%|▋         | 29000/395000 [00:02<00:40, 9046.58 examples/s] Map:   8%|▊         | 31000/395000 [00:03<00:38, 9479.24 examples/s]Map:   8%|▊         | 33000/395000 [00:03<00:36, 9844.31 examples/s]Map:   9%|▉         | 35000/395000 [00:03<00:35, 10108.90 examples/s]Map:   9%|▉         | 37000/395000 [00:03<00:34, 10270.75 examples/s]Map:  10%|▉         | 39000/395000 [00:03<00:34, 10445.40 examples/s]Map:  10%|█         | 41000/395000 [00:04<00:33, 10530.81 examples/s]Map:  11%|█         | 43000/395000 [00:04<00:33, 10629.52 examples/s]Map:  11%|█▏        | 45000/395000 [00:04<00:32, 10744.09 examples/s]Map:  12%|█▏        | 47000/395000 [00:04<00:32, 10750.58 examples/s]Map:  12%|█▏        | 49000/395000 [00:04<00:32, 10799.77 examples/s]Map:  13%|█▎        | 51000/395000 [00:04<00:31, 10769.02 examples/s]Map:  13%|█▎        | 53000/395000 [00:05<00:31, 10809.29 examples/s]Map:  14%|█▍        | 55000/395000 [00:05<00:31, 10745.56 examples/s]Map:  14%|█▍        | 57000/395000 [00:05<00:31, 10795.44 examples/s]Map:  15%|█▍        | 59000/395000 [00:05<00:31, 10802.89 examples/s]Map:  15%|█▌        | 61000/395000 [00:05<00:30, 10870.96 examples/s]Map:  16%|█▌        | 63000/395000 [00:06<00:36, 9100.53 examples/s] Map:  16%|█▋        | 65000/395000 [00:06<00:34, 9560.39 examples/s]Map:  17%|█▋        | 67000/395000 [00:06<00:33, 9898.34 examples/s]Map:  17%|█▋        | 69000/395000 [00:06<00:32, 10086.81 examples/s]Map:  18%|█▊        | 71000/395000 [00:06<00:31, 10331.64 examples/s]Map:  18%|█▊        | 73000/395000 [00:07<00:30, 10507.85 examples/s]Map:  19%|█▉        | 75000/395000 [00:07<00:30, 10605.25 examples/s]Map:  19%|█▉        | 77000/395000 [00:07<00:29, 10719.53 examples/s]Map:  20%|██        | 79000/395000 [00:07<00:29, 10745.51 examples/s]Map:  21%|██        | 81000/395000 [00:07<00:29, 10786.54 examples/s]Map:  21%|██        | 83000/395000 [00:08<00:28, 10842.45 examples/s]Map:  22%|██▏       | 85000/395000 [00:08<00:28, 10848.71 examples/s]Map:  22%|██▏       | 87000/395000 [00:08<00:28, 10790.47 examples/s]Map:  23%|██▎       | 89000/395000 [00:08<00:33, 9140.87 examples/s] Map:  23%|██▎       | 91000/395000 [00:08<00:31, 9636.99 examples/s]Map:  24%|██▎       | 93000/395000 [00:09<00:30, 9992.68 examples/s]Map:  24%|██▍       | 95000/395000 [00:09<00:29, 10243.10 examples/s]Map:  25%|██▍       | 97000/395000 [00:09<00:28, 10380.21 examples/s]Map:  25%|██▌       | 99000/395000 [00:09<00:28, 10411.46 examples/s]Map:  26%|██▌       | 101000/395000 [00:09<00:28, 10477.17 examples/s]Map:  26%|██▌       | 103000/395000 [00:10<00:27, 10595.68 examples/s]Map:  27%|██▋       | 105000/395000 [00:10<00:27, 10632.67 examples/s]Map:  27%|██▋       | 107000/395000 [00:10<00:26, 10680.77 examples/s]Map:  28%|██▊       | 109000/395000 [00:10<00:26, 10731.67 examples/s]Map:  28%|██▊       | 111000/395000 [00:10<00:26, 10789.38 examples/s]Map:  29%|██▊       | 113000/395000 [00:11<00:30, 9112.57 examples/s] Map:  29%|██▉       | 115000/395000 [00:11<00:29, 9580.82 examples/s]Map:  30%|██▉       | 117000/395000 [00:11<00:27, 9969.46 examples/s]Map:  30%|███       | 119000/395000 [00:11<00:26, 10285.11 examples/s]Map:  31%|███       | 121000/395000 [00:11<00:26, 10460.01 examples/s]Map:  31%|███       | 123000/395000 [00:11<00:25, 10547.99 examples/s]Map:  32%|███▏      | 125000/395000 [00:12<00:25, 10698.32 examples/s]Map:  32%|███▏      | 127000/395000 [00:12<00:24, 10806.02 examples/s]Map:  33%|███▎      | 129000/395000 [00:12<00:24, 10827.30 examples/s]Map:  33%|███▎      | 131000/395000 [00:12<00:24, 10863.07 examples/s]Map:  34%|███▎      | 133000/395000 [00:12<00:28, 9122.28 examples/s] Map:  34%|███▍      | 135000/395000 [00:13<00:27, 9539.71 examples/s]Map:  35%|███▍      | 137000/395000 [00:13<00:26, 9898.50 examples/s]Map:  35%|███▌      | 139000/395000 [00:13<00:25, 9884.01 examples/s]Map:  36%|███▌      | 141000/395000 [00:13<00:24, 10200.58 examples/s]Map:  36%|███▌      | 143000/395000 [00:13<00:24, 10433.17 examples/s]Map:  37%|███▋      | 145000/395000 [00:14<00:23, 10530.28 examples/s]Map:  37%|███▋      | 147000/395000 [00:14<00:23, 10589.55 examples/s]Map:  38%|███▊      | 149000/395000 [00:14<00:22, 10728.11 examples/s]Map:  38%|███▊      | 151000/395000 [00:14<00:28, 8497.94 examples/s] Map:  39%|███▊      | 153000/395000 [00:15<00:26, 9135.98 examples/s]Map:  39%|███▉      | 155000/395000 [00:15<00:24, 9622.86 examples/s]Map:  40%|███▉      | 157000/395000 [00:15<00:23, 10005.94 examples/s]Map:  40%|████      | 159000/395000 [00:15<00:22, 10261.80 examples/s]Map:  41%|████      | 161000/395000 [00:15<00:22, 10463.77 examples/s]Map:  41%|████▏     | 163000/395000 [00:15<00:21, 10650.09 examples/s]Map:  42%|████▏     | 165000/395000 [00:16<00:21, 10764.45 examples/s]Map:  42%|████▏     | 167000/395000 [00:16<00:21, 10757.11 examples/s]Map:  43%|████▎     | 169000/395000 [00:16<00:24, 9125.00 examples/s] Map:  43%|████▎     | 171000/395000 [00:16<00:23, 9639.58 examples/s]Map:  44%|████▍     | 173000/395000 [00:16<00:22, 10070.16 examples/s]Map:  44%|████▍     | 175000/395000 [00:17<00:21, 10284.54 examples/s]Map:  45%|████▍     | 177000/395000 [00:17<00:20, 10585.30 examples/s]Map:  45%|████▌     | 179000/395000 [00:17<00:20, 10720.23 examples/s]Map:  46%|████▌     | 181000/395000 [00:17<00:19, 10807.54 examples/s]Map:  46%|████▋     | 183000/395000 [00:17<00:19, 10836.97 examples/s]Map:  47%|████▋     | 185000/395000 [00:18<00:19, 10816.21 examples/s]Map:  47%|████▋     | 187000/395000 [00:18<00:19, 10728.88 examples/s]Map:  48%|████▊     | 189000/395000 [00:18<00:22, 9063.31 examples/s] Map:  48%|████▊     | 191000/395000 [00:18<00:21, 9616.99 examples/s]Map:  49%|████▉     | 193000/395000 [00:18<00:20, 10028.91 examples/s]Map:  49%|████▉     | 195000/395000 [00:19<00:19, 10319.47 examples/s]Map:  50%|████▉     | 197000/395000 [00:19<00:19, 10254.99 examples/s]Map:  50%|█████     | 199000/395000 [00:19<00:19, 10266.66 examples/s]Map:  51%|█████     | 201000/395000 [00:19<00:19, 10164.94 examples/s]Map:  51%|█████▏    | 203000/395000 [00:19<00:18, 10186.12 examples/s]Map:  52%|█████▏    | 205000/395000 [00:20<00:18, 10462.89 examples/s]Map:  52%|█████▏    | 207000/395000 [00:20<00:21, 8764.14 examples/s] Map:  53%|█████▎    | 208000/395000 [00:20<00:21, 8779.56 examples/s]Map:  53%|█████▎    | 209000/395000 [00:20<00:21, 8855.31 examples/s]Map:  53%|█████▎    | 211000/395000 [00:20<00:20, 9081.68 examples/s]Map:  54%|█████▍    | 213000/395000 [00:20<00:18, 9722.79 examples/s]Map:  54%|█████▍    | 215000/395000 [00:21<00:17, 10147.29 examples/s]Map:  55%|█████▍    | 217000/395000 [00:21<00:17, 10406.34 examples/s]Map:  55%|█████▌    | 219000/395000 [00:21<00:16, 10568.58 examples/s]Map:  56%|█████▌    | 221000/395000 [00:21<00:16, 10669.52 examples/s]Map:  56%|█████▋    | 223000/395000 [00:21<00:16, 10687.23 examples/s]Map:  57%|█████▋    | 225000/395000 [00:22<00:16, 10607.79 examples/s]Map:  57%|█████▋    | 227000/395000 [00:22<00:20, 8305.43 examples/s] Map:  58%|█████▊    | 229000/395000 [00:22<00:18, 8805.92 examples/s]Map:  58%|█████▊    | 231000/395000 [00:22<00:17, 9376.87 examples/s]Map:  59%|█████▉    | 233000/395000 [00:22<00:16, 9837.91 examples/s]Map:  59%|█████▉    | 235000/395000 [00:23<00:15, 10066.96 examples/s]Map:  60%|██████    | 237000/395000 [00:23<00:16, 9814.65 examples/s] Map:  61%|██████    | 239000/395000 [00:23<00:16, 9674.90 examples/s]Map:  61%|██████    | 241000/395000 [00:23<00:15, 9997.42 examples/s]Map:  62%|██████▏   | 243000/395000 [00:23<00:15, 9857.80 examples/s]Map:  62%|██████▏   | 245000/395000 [00:24<00:14, 10160.96 examples/s]Map:  63%|██████▎   | 247000/395000 [00:24<00:17, 8489.49 examples/s] Map:  63%|██████▎   | 249000/395000 [00:24<00:16, 9085.67 examples/s]Map:  64%|██████▎   | 251000/395000 [00:24<00:15, 9562.91 examples/s]Map:  64%|██████▍   | 253000/395000 [00:25<00:14, 9962.50 examples/s]Map:  65%|██████▍   | 255000/395000 [00:25<00:13, 10189.83 examples/s]Map:  65%|██████▌   | 257000/395000 [00:25<00:13, 10404.60 examples/s]Map:  66%|██████▌   | 259000/395000 [00:25<00:12, 10578.32 examples/s]Map:  66%|██████▌   | 261000/395000 [00:25<00:12, 10542.05 examples/s]Map:  67%|██████▋   | 263000/395000 [00:25<00:12, 10514.58 examples/s]Map:  67%|██████▋   | 265000/395000 [00:26<00:15, 8181.22 examples/s] Map:  68%|██████▊   | 267000/395000 [00:26<00:14, 8827.12 examples/s]Map:  68%|██████▊   | 268000/395000 [00:26<00:14, 8884.27 examples/s]Map:  68%|██████▊   | 269000/395000 [00:26<00:14, 8911.75 examples/s]Map:  69%|██████▊   | 271000/395000 [00:26<00:12, 9576.86 examples/s]Map:  69%|██████▉   | 272000/395000 [00:27<00:13, 9394.93 examples/s]Map:  69%|██████▉   | 273000/395000 [00:27<00:13, 9372.84 examples/s]Map:  70%|██████▉   | 275000/395000 [00:27<00:12, 9611.39 examples/s]Map:  70%|██████▉   | 276000/395000 [00:27<00:12, 9596.04 examples/s]Map:  70%|███████   | 277000/395000 [00:27<00:12, 9510.95 examples/s]Map:  71%|███████   | 279000/395000 [00:27<00:11, 9684.86 examples/s]Map:  71%|███████   | 281000/395000 [00:27<00:11, 10141.08 examples/s]Map:  72%|███████▏  | 283000/395000 [00:28<00:13, 8204.65 examples/s] Map:  72%|███████▏  | 285000/395000 [00:28<00:12, 8947.15 examples/s]Map:  73%|███████▎  | 287000/395000 [00:28<00:11, 9535.57 examples/s]Map:  73%|███████▎  | 289000/395000 [00:28<00:10, 9983.98 examples/s]Map:  74%|███████▎  | 291000/395000 [00:29<00:10, 10233.21 examples/s]Map:  74%|███████▍  | 293000/395000 [00:29<00:09, 10484.89 examples/s]Map:  75%|███████▍  | 295000/395000 [00:29<00:09, 10646.02 examples/s]Map:  75%|███████▌  | 297000/395000 [00:29<00:09, 10687.12 examples/s]Map:  76%|███████▌  | 299000/395000 [00:29<00:08, 10762.87 examples/s]Map:  76%|███████▌  | 301000/395000 [00:29<00:08, 10818.33 examples/s]Map:  77%|███████▋  | 303000/395000 [00:30<00:10, 8923.10 examples/s] Map:  77%|███████▋  | 305000/395000 [00:30<00:09, 9484.27 examples/s]Map:  78%|███████▊  | 307000/395000 [00:30<00:08, 9935.58 examples/s]Map:  78%|███████▊  | 309000/395000 [00:30<00:08, 10221.57 examples/s]Map:  79%|███████▊  | 311000/395000 [00:30<00:07, 10500.91 examples/s]Map:  79%|███████▉  | 313000/395000 [00:31<00:07, 10657.11 examples/s]Map:  80%|███████▉  | 315000/395000 [00:31<00:07, 10757.84 examples/s]Map:  80%|████████  | 317000/395000 [00:31<00:07, 10830.21 examples/s]Map:  81%|████████  | 319000/395000 [00:31<00:06, 10905.78 examples/s]Map:  81%|████████▏ | 321000/395000 [00:32<00:08, 9049.33 examples/s] Map:  82%|████████▏ | 322000/395000 [00:32<00:07, 9172.07 examples/s]Map:  82%|████████▏ | 324000/395000 [00:32<00:07, 9559.43 examples/s]Map:  83%|████████▎ | 326000/395000 [00:32<00:07, 9674.70 examples/s]Map:  83%|████████▎ | 328000/395000 [00:32<00:06, 9936.87 examples/s]Map:  84%|████████▎ | 330000/395000 [00:32<00:06, 10129.51 examples/s]Map:  84%|████████▍ | 332000/395000 [00:33<00:06, 10355.88 examples/s]Map:  85%|████████▍ | 334000/395000 [00:33<00:05, 10571.90 examples/s]Map:  85%|████████▌ | 336000/395000 [00:33<00:05, 10691.20 examples/s]Map:  86%|████████▌ | 338000/395000 [00:33<00:05, 10874.36 examples/s]Map:  86%|████████▌ | 340000/395000 [00:33<00:06, 9122.14 examples/s] Map:  87%|████████▋ | 342000/395000 [00:34<00:05, 9641.74 examples/s]Map:  87%|████████▋ | 344000/395000 [00:34<00:05, 9789.49 examples/s]Map:  88%|████████▊ | 346000/395000 [00:34<00:04, 10162.49 examples/s]Map:  88%|████████▊ | 348000/395000 [00:34<00:04, 10439.64 examples/s]Map:  89%|████████▊ | 350000/395000 [00:34<00:04, 10305.68 examples/s]Map:  89%|████████▉ | 352000/395000 [00:35<00:04, 10203.94 examples/s]Map:  90%|████████▉ | 354000/395000 [00:35<00:03, 10283.05 examples/s]Map:  90%|█████████ | 356000/395000 [00:35<00:03, 10364.72 examples/s]Map:  91%|█████████ | 358000/395000 [00:35<00:03, 10540.43 examples/s]Map:  91%|█████████ | 360000/395000 [00:35<00:03, 9040.01 examples/s] Map:  92%|█████████▏| 362000/395000 [00:36<00:03, 9536.24 examples/s]Map:  92%|█████████▏| 364000/395000 [00:36<00:03, 9702.66 examples/s]Map:  93%|█████████▎| 366000/395000 [00:36<00:02, 10152.32 examples/s]Map:  93%|█████████▎| 368000/395000 [00:36<00:02, 10436.47 examples/s]Map:  94%|█████████▎| 370000/395000 [00:36<00:02, 10631.59 examples/s]Map:  94%|█████████▍| 372000/395000 [00:36<00:02, 10736.80 examples/s]Map:  95%|█████████▍| 374000/395000 [00:37<00:01, 10806.00 examples/s]Map:  95%|█████████▌| 376000/395000 [00:37<00:01, 10901.98 examples/s]Map:  96%|█████████▌| 378000/395000 [00:37<00:01, 9136.54 examples/s] Map:  96%|█████████▌| 380000/395000 [00:37<00:01, 9609.73 examples/s]Map:  97%|█████████▋| 382000/395000 [00:38<00:01, 10000.40 examples/s]Map:  97%|█████████▋| 384000/395000 [00:38<00:01, 10296.21 examples/s]Map:  98%|█████████▊| 386000/395000 [00:38<00:00, 10453.25 examples/s]Map:  98%|█████████▊| 388000/395000 [00:38<00:00, 10637.37 examples/s]Map:  99%|█████████▊| 390000/395000 [00:38<00:00, 10754.18 examples/s]Map:  99%|█████████▉| 392000/395000 [00:38<00:00, 10865.08 examples/s]Map: 100%|█████████▉| 394000/395000 [00:39<00:00, 10243.30 examples/s]Map: 100%|██████████| 395000/395000 [00:39<00:00, 10063.97 examples/s]
+11/09/2024 09:47:10 - INFO - __main__ - Dataset({
+    features: ['query', 'response', 'type', 'original_question', 'prompt', 'prefix'],
+    num_rows: 395000
+})
+11/09/2024 09:47:10 - INFO - __main__ - ImplicitTransBridge(
+  (llm): Qwen2ForCausalLM(
+    (model): Qwen2Model(
+      (embed_tokens): Embedding(152064, 3584)
+      (layers): ModuleList(
+        (0-27): 28 x Qwen2DecoderLayer(
+          (self_attn): Qwen2SdpaAttention(
+            (q_proj): Linear(in_features=3584, out_features=3584, bias=True)
+            (k_proj): Linear(in_features=3584, out_features=512, bias=True)
+            (v_proj): Linear(in_features=3584, out_features=512, bias=True)
+            (o_proj): Linear(in_features=3584, out_features=3584, bias=False)
+            (rotary_emb): Qwen2RotaryEmbedding()
+          )
+          (mlp): Qwen2MLP(
+            (gate_proj): Linear(in_features=3584, out_features=18944, bias=False)
+            (up_proj): Linear(in_features=3584, out_features=18944, bias=False)
+            (down_proj): Linear(in_features=18944, out_features=3584, bias=False)
+            (act_fn): SiLU()
+          )
+          (input_layernorm): Qwen2RMSNorm((3584,), eps=1e-06)
+          (post_attention_layernorm): Qwen2RMSNorm((3584,), eps=1e-06)
+        )
+      )
+      (norm): Qwen2RMSNorm((3584,), eps=1e-06)
+    )
+    (lm_head): Linear(in_features=3584, out_features=152064, bias=False)
+  )
+  (llm_embedding_layer): Embedding(152064, 3584)
+  (slm_a): XLMRobertaModel(
+    (embeddings): XLMRobertaEmbeddings(
+      (word_embeddings): Embedding(250002, 768, padding_idx=1)
+      (position_embeddings): Embedding(514, 768, padding_idx=1)
+      (token_type_embeddings): Embedding(1, 768)
+      (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (encoder): XLMRobertaEncoder(
+      (layer): ModuleList(
+        (0-11): 12 x XLMRobertaLayer(
+          (attention): XLMRobertaAttention(
+            (self): XLMRobertaSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): XLMRobertaSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): XLMRobertaIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): XLMRobertaOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+      )
+    )
+    (pooler): XLMRobertaPooler(
+      (dense): Linear(in_features=768, out_features=768, bias=True)
+      (activation): Tanh()
+    )
+  )
+  (mapping_a): Mapping(
+    (mlp): MLP(
+      (linear1): Linear(in_features=768, out_features=1536, bias=True)
+      (linear2): Linear(in_features=1536, out_features=3584, bias=True)
+      (relu): ReLU()
+    )
+  )
+)
+11/09/2024 09:47:10 - INFO - __main__ - trainable params: 6693376 || all params: 7900353536 || trainable%: 0.0847
+11/09/2024 09:47:10 - WARNING - accelerate.utils.other - Detected kernel version 4.19.90, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+[INFO|trainer.py:648] 2024-11-09 09:47:10,370 >> Using auto half precision backend
+[2024-11-09 09:47:10,789] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed info: version=0.14.4, git-hash=unknown, git-branch=unknown
+[2024-11-09 09:47:37,712] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed Flops Profiler Enabled: False
+[2024-11-09 09:47:37,713] [INFO] [logging.py:96:log_dist] [Rank 0] Using client Optimizer as basic optimizer
+[2024-11-09 09:47:37,714] [INFO] [logging.py:96:log_dist] [Rank 0] Removing param_group that has no 'params' in the basic Optimizer
+[2024-11-09 09:47:37,715] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed Basic Optimizer = AdamW
+[2024-11-09 09:47:37,715] [INFO] [utils.py:56:is_zero_supported_optimizer] Checking ZeRO support for optimizer=AdamW type=<class 'torch.optim.adamw.AdamW'>
+[2024-11-09 09:47:37,715] [INFO] [logging.py:96:log_dist] [Rank 0] Creating torch.bfloat16 ZeRO stage 2 optimizer
+[2024-11-09 09:47:37,715] [INFO] [stage_1_and_2.py:148:__init__] Reduce bucket size 500000000
+[2024-11-09 09:47:37,715] [INFO] [stage_1_and_2.py:149:__init__] Allgather bucket size 500000000
+[2024-11-09 09:47:37,715] [INFO] [stage_1_and_2.py:150:__init__] CPU Offload: False
+[2024-11-09 09:47:37,715] [INFO] [stage_1_and_2.py:151:__init__] Round robin gradient partitioning: False
+[WARNING|logging.py:313] 2024-11-09 09:47:37,912 >> You're using a XLMRobertaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+[WARNING|logging.py:313] 2024-11-09 09:47:37,913 >> You're using a Qwen2TokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+[WARNING|logging.py:313] 2024-11-09 09:47:37,925 >> You're using a XLMRobertaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+[WARNING|logging.py:313] 2024-11-09 09:47:37,925 >> You're using a Qwen2TokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+[WARNING|logging.py:313] 2024-11-09 09:47:37,930 >> You're using a XLMRobertaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+[WARNING|logging.py:313] 2024-11-09 09:47:37,930 >> You're using a Qwen2TokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+[WARNING|logging.py:313] 2024-11-09 09:47:37,932 >> You're using a XLMRobertaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+[WARNING|logging.py:313] 2024-11-09 09:47:37,932 >> You're using a Qwen2TokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+[WARNING|logging.py:313] 2024-11-09 09:47:37,934 >> You're using a XLMRobertaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+[WARNING|logging.py:313] 2024-11-09 09:47:37,934 >> You're using a Qwen2TokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+[WARNING|logging.py:313] 2024-11-09 09:47:37,938 >> You're using a XLMRobertaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+[WARNING|logging.py:313] 2024-11-09 09:47:37,938 >> You're using a Qwen2TokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+[WARNING|logging.py:313] 2024-11-09 09:47:37,939 >> You're using a XLMRobertaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+[WARNING|logging.py:313] 2024-11-09 09:47:37,939 >> You're using a Qwen2TokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+[2024-11-09 09:47:38,068] [INFO] [utils.py:781:see_memory_usage] Before initializing optimizer states
+[2024-11-09 09:47:38,069] [INFO] [utils.py:782:see_memory_usage] MA 14.83 GB         Max_MA 14.83 GB         CA 14.9 GB         Max_CA 15 GB 
+[2024-11-09 09:47:38,069] [INFO] [utils.py:789:see_memory_usage] CPU Virtual Memory:  used = 52.43 GB, percent = 2.6%
+[2024-11-09 09:47:38,190] [INFO] [utils.py:781:see_memory_usage] After initializing optimizer states
+[2024-11-09 09:47:38,191] [INFO] [utils.py:782:see_memory_usage] MA 14.83 GB         Max_MA 14.84 GB         CA 14.9 GB         Max_CA 15 GB 
+[2024-11-09 09:47:38,191] [INFO] [utils.py:789:see_memory_usage] CPU Virtual Memory:  used = 52.43 GB, percent = 2.6%
+[2024-11-09 09:47:38,191] [INFO] [stage_1_and_2.py:543:__init__] optimizer state initialized
+[2024-11-09 09:47:38,319] [INFO] [utils.py:781:see_memory_usage] After initializing ZeRO optimizer
+[2024-11-09 09:47:38,319] [INFO] [utils.py:782:see_memory_usage] MA 14.83 GB         Max_MA 14.83 GB         CA 14.9 GB         Max_CA 15 GB 
+[2024-11-09 09:47:38,319] [INFO] [utils.py:789:see_memory_usage] CPU Virtual Memory:  used = 52.44 GB, percent = 2.6%
+[2024-11-09 09:47:38,320] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed Final Optimizer = DeepSpeedZeroOptimizer
+[2024-11-09 09:47:38,320] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed using client LR scheduler
+[2024-11-09 09:47:38,320] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed LR Scheduler = None
+[2024-11-09 09:47:38,320] [INFO] [logging.py:96:log_dist] [Rank 0] step=0, skipped=0, lr=[0.0002, 0.0002], mom=[(0.9, 0.999), (0.9, 0.999)]
+[2024-11-09 09:47:38,321] [INFO] [config.py:997:print] DeepSpeedEngine configuration:
+[2024-11-09 09:47:38,321] [INFO] [config.py:1001:print]   activation_checkpointing_config  {
+    "partition_activations": false, 
+    "contiguous_memory_optimization": false, 
+    "cpu_checkpointing": false, 
+    "number_checkpoints": null, 
+    "synchronize_checkpoint_boundary": false, 
+    "profile": false
+}
+[2024-11-09 09:47:38,321] [INFO] [config.py:1001:print]   aio_config ................... {'block_size': 1048576, 'queue_depth': 8, 'thread_count': 1, 'single_submit': False, 'overlap_events': True}
+[2024-11-09 09:47:38,321] [INFO] [config.py:1001:print]   amp_enabled .................. False
+[2024-11-09 09:47:38,321] [INFO] [config.py:1001:print]   amp_params ................... False
+[2024-11-09 09:47:38,321] [INFO] [config.py:1001:print]   autotuning_config ............ {
+    "enabled": false, 
+    "start_step": null, 
+    "end_step": null, 
+    "metric_path": null, 
+    "arg_mappings": null, 
+    "metric": "throughput", 
+    "model_info": null, 
+    "results_dir": "autotuning_results", 
+    "exps_dir": "autotuning_exps", 
+    "overwrite": true, 
+    "fast": true, 
+    "start_profile_step": 3, 
+    "end_profile_step": 5, 
+    "tuner_type": "gridsearch", 
+    "tuner_early_stopping": 5, 
+    "tuner_num_trials": 50, 
+    "model_info_path": null, 
+    "mp_size": 1, 
+    "max_train_batch_size": null, 
+    "min_train_batch_size": 1, 
+    "max_train_micro_batch_size_per_gpu": 1.024000e+03, 
+    "min_train_micro_batch_size_per_gpu": 1, 
+    "num_tuning_micro_batch_sizes": 3
+}
+[2024-11-09 09:47:38,321] [INFO] [config.py:1001:print]   bfloat16_enabled ............. True
+[2024-11-09 09:47:38,321] [INFO] [config.py:1001:print]   bfloat16_immediate_grad_update  False
+[2024-11-09 09:47:38,321] [INFO] [config.py:1001:print]   checkpoint_parallel_write_pipeline  False
+[2024-11-09 09:47:38,321] [INFO] [config.py:1001:print]   checkpoint_tag_validation_enabled  True
+[2024-11-09 09:47:38,321] [INFO] [config.py:1001:print]   checkpoint_tag_validation_fail  False
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   comms_config ................. <deepspeed.comm.config.DeepSpeedCommsConfig object at 0x7fb871e2d970>
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   communication_data_type ...... None
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   compression_config ........... {'weight_quantization': {'shared_parameters': {'enabled': False, 'quantizer_kernel': False, 'schedule_offset': 0, 'quantize_groups': 1, 'quantize_verbose': False, 'quantization_type': 'symmetric', 'quantize_weight_in_forward': False, 'rounding': 'nearest', 'fp16_mixed_quantize': False, 'quantize_change_ratio': 0.001}, 'different_groups': {}}, 'activation_quantization': {'shared_parameters': {'enabled': False, 'quantization_type': 'symmetric', 'range_calibration': 'dynamic', 'schedule_offset': 1000}, 'different_groups': {}}, 'sparse_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'row_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'head_pruning': {'shared_parameters': {'enabled': False, 'method': 'topk', 'schedule_offset': 1000}, 'different_groups': {}}, 'channel_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'layer_reduction': {'enabled': False}}
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   curriculum_enabled_legacy .... False
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   curriculum_params_legacy ..... False
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   data_efficiency_config ....... {'enabled': False, 'seed': 1234, 'data_sampling': {'enabled': False, 'num_epochs': 1000, 'num_workers': 0, 'curriculum_learning': {'enabled': False}}, 'data_routing': {'enabled': False, 'random_ltd': {'enabled': False, 'layer_token_lr_schedule': {'enabled': False}}}}
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   data_efficiency_enabled ...... False
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   dataloader_drop_last ......... False
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   disable_allgather ............ False
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   dump_state ................... False
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   dynamic_loss_scale_args ...... None
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   eigenvalue_enabled ........... False
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   eigenvalue_gas_boundary_resolution  1
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   eigenvalue_layer_name ........ bert.encoder.layer
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   eigenvalue_layer_num ......... 0
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   eigenvalue_max_iter .......... 100
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   eigenvalue_stability ......... 1e-06
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   eigenvalue_tol ............... 0.01
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   eigenvalue_verbose ........... False
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   elasticity_enabled ........... False
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   flops_profiler_config ........ {
+    "enabled": false, 
+    "recompute_fwd_factor": 0.0, 
+    "profile_step": 1, 
+    "module_depth": -1, 
+    "top_modules": 1, 
+    "detailed": true, 
+    "output_file": null
+}
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   fp16_auto_cast ............... None
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   fp16_enabled ................. False
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   fp16_master_weights_and_gradients  False
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   global_rank .................. 0
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   grad_accum_dtype ............. None
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   gradient_accumulation_steps .. 4
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   gradient_clipping ............ 1.0
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   gradient_predivide_factor .... 1.0
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   graph_harvesting ............. False
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   hybrid_engine ................ enabled=False max_out_tokens=512 inference_tp_size=1 release_inference_cache=False pin_parameters=True tp_gather_partition_size=8
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   initial_dynamic_scale ........ 1
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   load_universal_checkpoint .... False
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   loss_scale ................... 1.0
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   memory_breakdown ............. False
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   mics_hierarchial_params_gather  False
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   mics_shard_size .............. -1
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   monitor_config ............... tensorboard=TensorBoardConfig(enabled=False, output_path='', job_name='DeepSpeedJobName') comet=CometConfig(enabled=False, samples_log_interval=100, project=None, workspace=None, api_key=None, experiment_name=None, experiment_key=None, online=None, mode=None) wandb=WandbConfig(enabled=False, group=None, team=None, project='deepspeed') csv_monitor=CSVConfig(enabled=False, output_path='', job_name='DeepSpeedJobName') enabled=False
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   nebula_config ................ {
+    "enabled": false, 
+    "persistent_storage_path": null, 
+    "persistent_time_interval": 100, 
+    "num_of_version_in_retention": 2, 
+    "enable_nebula_load": true, 
+    "load_path": null
+}
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   optimizer_legacy_fusion ...... False
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   optimizer_name ............... None
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   optimizer_params ............. None
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   pipeline ..................... {'stages': 'auto', 'partition': 'best', 'seed_layers': False, 'activation_checkpoint_interval': 0, 'pipe_partitioned': True, 'grad_partitioned': True}
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   pld_enabled .................. False
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   pld_params ................... False
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   prescale_gradients ........... False
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   scheduler_name ............... None
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   scheduler_params ............. None
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   seq_parallel_communication_data_type  torch.float32
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   sparse_attention ............. None
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   sparse_gradients_enabled ..... False
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   steps_per_print .............. inf
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   timers_config ................ enabled=True synchronized=True
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   train_batch_size ............. 128
+[2024-11-09 09:47:38,322] [INFO] [config.py:1001:print]   train_micro_batch_size_per_gpu  4
+[2024-11-09 09:47:38,323] [INFO] [config.py:1001:print]   use_data_before_expert_parallel_  False
+[2024-11-09 09:47:38,323] [INFO] [config.py:1001:print]   use_node_local_storage ....... False
+[2024-11-09 09:47:38,323] [INFO] [config.py:1001:print]   wall_clock_breakdown ......... False
+[2024-11-09 09:47:38,323] [INFO] [config.py:1001:print]   weight_quantization_config ... None
+[2024-11-09 09:47:38,323] [INFO] [config.py:1001:print]   world_size ................... 8
+[2024-11-09 09:47:38,323] [INFO] [config.py:1001:print]   zero_allow_untested_optimizer  True
+[2024-11-09 09:47:38,323] [INFO] [config.py:1001:print]   zero_config .................. stage=2 contiguous_gradients=True reduce_scatter=True reduce_bucket_size=500000000 use_multi_rank_bucket_allreduce=True allgather_partitions=True allgather_bucket_size=500000000 overlap_comm=True load_from_fp32_weights=True elastic_checkpoint=False offload_param=None offload_optimizer=None sub_group_size=1,000,000,000 cpu_offload_param=None cpu_offload_use_pin_memory=None cpu_offload=None prefetch_bucket_size=50,000,000 param_persistence_threshold=100,000 model_persistence_threshold=sys.maxsize max_live_parameters=1,000,000,000 max_reuse_distance=1,000,000,000 gather_16bit_weights_on_model_save=False use_all_reduce_for_fetch_params=False stage3_gather_fp16_weights_on_model_save=False ignore_unused_parameters=True legacy_stage1=False round_robin_gradients=False zero_hpz_partition_size=1 zero_quantized_weights=False zero_quantized_nontrainable_weights=False zero_quantized_gradients=False mics_shard_size=-1 mics_hierarchical_params_gather=False memory_efficient_linear=True pipeline_loading_checkpoint=False override_module_apply=True
+[2024-11-09 09:47:38,323] [INFO] [config.py:1001:print]   zero_enabled ................. True
+[2024-11-09 09:47:38,323] [INFO] [config.py:1001:print]   zero_force_ds_cpu_optimizer .. True
+[2024-11-09 09:47:38,323] [INFO] [config.py:1001:print]   zero_optimization_stage ...... 2
+[2024-11-09 09:47:38,323] [INFO] [config.py:987:print_user_config]   json = {
+    "train_batch_size": 128, 
+    "train_micro_batch_size_per_gpu": 4, 
+    "gradient_accumulation_steps": 4, 
+    "gradient_clipping": 1.0, 
+    "zero_allow_untested_optimizer": true, 
+    "fp16": {
+        "enabled": false, 
+        "loss_scale": 0, 
+        "initial_scale_power": 16, 
+        "loss_scale_window": 1000, 
+        "hysteresis": 2, 
+        "min_loss_scale": 1
+    }, 
+    "zero_optimization": {
+        "stage": 2, 
+        "allgather_partitions": true, 
+        "allgather_bucket_size": 5.000000e+08, 
+        "overlap_comm": true, 
+        "reduce_scatter": true, 
+        "reduce_bucket_size": 5.000000e+08, 
+        "contiguous_gradients": true
+    }, 
+    "steps_per_print": inf, 
+    "bf16": {
+        "enabled": true
+    }
+}
+[INFO|trainer.py:2134] 2024-11-09 09:47:38,323 >> ***** Running training *****
+[INFO|trainer.py:2135] 2024-11-09 09:47:38,323 >>   Num examples = 395,000
+[INFO|trainer.py:2136] 2024-11-09 09:47:38,323 >>   Num Epochs = 1
+[INFO|trainer.py:2137] 2024-11-09 09:47:38,323 >>   Instantaneous batch size per device = 4
+[INFO|trainer.py:2140] 2024-11-09 09:47:38,323 >>   Total train batch size (w. parallel, distributed & accumulation) = 128
+[INFO|trainer.py:2141] 2024-11-09 09:47:38,323 >>   Gradient Accumulation steps = 4
+[INFO|trainer.py:2142] 2024-11-09 09:47:38,323 >>   Total optimization steps = 3,086
+[INFO|trainer.py:2143] 2024-11-09 09:47:38,324 >>   Number of trainable parameters = 6,693,376
+  0%|          | 0/3086 [00:00<?, ?it/s][WARNING|logging.py:313] 2024-11-09 09:47:38,345 >> You're using a XLMRobertaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+[WARNING|logging.py:313] 2024-11-09 09:47:38,346 >> You're using a Qwen2TokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+[WARNING|modeling_utils.py:1264] 2024-11-09 09:47:38,990 >> Could not estimate the number of tokens of the input, floating-point operations will not be computed
+[WARNING|modeling_utils.py:1264] 2024-11-09 09:47:38,990 >> Could not estimate the number of tokens of the input, floating-point operations will not be computed
+[WARNING|modeling_utils.py:1264] 2024-11-09 09:47:38,990 >> Could not estimate the number of tokens of the input, floating-point operations will not be computed
+[WARNING|modeling_utils.py:1264] 2024-11-09 09:47:38,991 >> Could not estimate the number of tokens of the input, floating-point operations will not be computed
+[WARNING|modeling_utils.py:1264] 2024-11-09 09:47:38,991 >> Could not estimate the number of tokens of the input, floating-point operations will not be computed
+[WARNING|modeling_utils.py:1264] 2024-11-09 09:47:38,991 >> Could not estimate the number of tokens of the input, floating-point operations will not be computed
+[WARNING|modeling_utils.py:1264] 2024-11-09 09:47:38,991 >> Could not estimate the number of tokens of the input, floating-point operations will not be computed
+[WARNING|modeling_utils.py:1264] 2024-11-09 09:47:38,992 >> Could not estimate the number of tokens of the input, floating-point operations will not be computed
+  0%|          | 1/3086 [00:02<1:53:18,  2.20s/it]  0%|          | 2/3086 [00:04<1:41:40,  1.98s/it]  0%|          | 3/3086 [00:05<1:40:23,  1.95s/it][rank0]: Traceback (most recent call last):
+[rank0]:   File "/root/work/huangxin/nanda/ImplicitTransBridge-master/train.py", line 178, in <module>
+[rank0]:     main()
+[rank0]:   File "/root/work/huangxin/nanda/ImplicitTransBridge-master/train.py", line 148, in main
+[rank0]:     train_result = trainer.train(resume_from_checkpoint=checkpoint)
+[rank0]:   File "/root/.local/lib/python3.9/site-packages/transformers/trainer.py", line 1938, in train
+[rank0]:     return inner_training_loop(
+[rank0]:   File "/root/.local/lib/python3.9/site-packages/transformers/trainer.py", line 2279, in _inner_training_loop
+[rank0]:     tr_loss_step = self.training_step(model, inputs)
+[rank0]:   File "/root/.local/lib/python3.9/site-packages/transformers/trainer.py", line 3318, in training_step
+[rank0]:     loss = self.compute_loss(model, inputs)
+[rank0]:   File "/root/.local/lib/python3.9/site-packages/transformers/trainer.py", line 3363, in compute_loss
+[rank0]:     outputs = model(**inputs)
+[rank0]:   File "/root/.local/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/root/.local/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/root/.local/lib/python3.9/site-packages/deepspeed/utils/nvtx.py", line 15, in wrapped_fn
+[rank0]:     ret_val = func(*args, **kwargs)
+[rank0]:   File "/root/.local/lib/python3.9/site-packages/deepspeed/runtime/engine.py", line 1846, in forward
+[rank0]:     loss = self.module(*inputs, **kwargs)
+[rank0]:   File "/root/.local/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/root/.local/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/root/work/huangxin/nanda/ImplicitTransBridge-master/src/model_utils/modeling_itb.py", line 194, in forward
+[rank0]:     return self.stage0_forward(input_ids_prefix, attention_mask_prefix,
+[rank0]:   File "/root/work/huangxin/nanda/ImplicitTransBridge-master/src/model_utils/modeling_itb.py", line 139, in stage0_forward
+[rank0]:     slma_outputs = self.slm_a(input_ids=input_ids_query,
+[rank0]:   File "/root/.local/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/root/.local/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/root/.local/lib/python3.9/site-packages/transformers/models/xlm_roberta/modeling_xlm_roberta.py", line 800, in forward
+[rank0]:     buffered_token_type_ids_expanded = buffered_token_type_ids.expand(batch_size, seq_length)
+[rank0]: RuntimeError: The expanded size of the tensor (920) must match the existing size (514) at non-singleton dimension 1.  Target sizes: [4, 920].  Tensor sizes: [1, 514]
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+  0%|          | 3/3086 [00:06<1:59:34,  2.33s/it]
+[2024-11-09 09:47:47,089] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 245
+[2024-11-09 09:47:47,089] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 246
+[2024-11-09 09:47:47,424] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 247
+[2024-11-09 09:47:47,758] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 248
+[2024-11-09 09:47:48,052] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 249
+[2024-11-09 09:47:48,345] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 250
+[2024-11-09 09:47:48,679] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 251
+[2024-11-09 09:47:49,012] [INFO] [launch.py:319:sigkill_handler] Killing subprocess 252
+[2024-11-09 09:47:49,346] [ERROR] [launch.py:325:sigkill_handler] ['/root/work/huangxin/envs/hs/bin/python', '-u', '/root/work/huangxin/nanda/ImplicitTransBridge-master/train.py', '--local_rank=7', '--deepspeed', '/root/work/huangxin/nanda/ImplicitTransBridge-master/ds_configs/ds_config.json', '--dataset_name', '/root/work/huangxin/nanda/QAlign-master/data/metamath/MetaMathQA-395K.json', '--preprocessing_num_workers', '24', '--llm_path', '/root/work/huangxin/nanda/models/Qwen/Qwen2.5-Math-7B-Instruct', '--slm_path_a', '/root/work/huangxin/nanda/models/Qwen/FacebookAI/xlm-roberta-base', '--slm_path_b', '/root/work/huangxin/nanda/models/Qwen/FacebookAI/xlm-roberta-base', '--stage', '0', '--output_dir', '/root/work/huangxin/nanda/ImplicitTransBridge-master/checkpoints/xlmr-qwe2.5-math7b-metamath', '--do_train', '--max_seq_length', '1024', '--per_device_train_batch_size', '4', '--gradient_accumulation_steps', '4', '--learning_rate', '2e-4', '--num_train_epochs', '1', '--save_only_model', '--logging_steps', '10', '--save_steps', '2000', '--seed', '42', '--overwrite_output_dir', '--bf16'] exits with return code = 1

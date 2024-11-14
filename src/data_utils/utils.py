@@ -1,0 +1,1 @@
+translation_prompt =  "Translate from {} to {}: "
